@@ -1,0 +1,33 @@
+{
+    "main" : {
+        "sub_to" : "opt",
+        "opt" : {
+            "user_name" : "ryusei-u",
+            "match_id" : "93",
+            "script" : {
+                "send": "echo ${SOLUTION} | opt submit --match=${ID} --no-wait",
+                "get": "opt list solutions --limit ${SENDLISTSIZE} --query \"_and: [{match_id: {_eq: ${ID}}}, {owner: {name: {_eq: ${USERNAME}}}}]\""
+            }
+        },
+        "qsub":{
+            "sub_to" : "opt2022",
+            "opt2022" : {
+                "model" : "SOP1",
+                "script" : "#!/bin/bash\n#PBS -V\n#PBS -l nodes=1:ppn=1\n#PBS -l walltime=00:20:00\n#PBS -l mem=1200mb\n#PBS -q cpu\necho ${SOLUTION} | docker run --rm -i -e MODEL=${MODEL} -e BEST_FLOAT_MAX=100 tkmnet/masbench:unzip"
+            },
+            "sphere":{
+                "script" : "#!/bin/bash\n#PBS -V\n#PBS -l nodes=1:ppn=1\n#PBS -l walltime=00:20:00\n#PBS -l mem=1200mb\n#PBS -q cpu\necho '${SOLUTION}' | docker run -i --rm sphere-function"
+            }
+
+        },
+        "local":{
+            "cmd" : ""
+        }
+    },
+    "status" : {
+        "limit": 10
+    },
+    "history" : {
+        "limit":10
+    }
+}
