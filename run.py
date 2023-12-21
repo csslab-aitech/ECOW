@@ -1,4 +1,4 @@
-from ECOW_before.comp_module.functions.main import Main
+from ECOW.comp_module.functions.main import Main
 
 def Run(solutions = None, no_wait=False):
     """Function to run module executable file
