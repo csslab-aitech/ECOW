@@ -2,8 +2,8 @@
     "main" : {
         "sub_to" : "opt",
         "opt" : {
-            "user_name" : "ryusei-u",
-            "match_id" : "93",
+            "user_name" : "",
+            "match_id" : "",
             "script" : {
                 "send": "echo ${SOLUTION} | opt submit --match=${ID} --no-wait",
                 "get": "opt list solutions --limit ${SENDLISTSIZE} --query \"_and: [{match_id: {_eq: ${ID}}}, {owner: {name: {_eq: ${USERNAME}}}}]\""
