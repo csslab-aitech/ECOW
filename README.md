@@ -45,4 +45,4 @@ Visit the [document](https://csslab-aitech.github.io/ECOW/) of ECOW.
 
 ## Contact
 - If you would like to participate in the development, please contact us at the email address below.
-- csslab _at_ aitech.ac.jp (replace _at_ with@)
+- csslab _at_ aitech.ac.jp (replace _at_ with @)
