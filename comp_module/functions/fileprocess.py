@@ -29,7 +29,7 @@ class FileProcess:
         self.send_data = self.getValue(sendfile)
         self.resultID = resultID
         if resultID is not self.RESULT_RESTORE_FILE:
-            self.RESULT_RESTORE_FILE = os.path.normpath(os.path.join(self.FILE_DIRECTORY, f'./__restore_files/resultFile_{resultID}.json'))
+            self.RESULT_RESTORE_FILE = os.path.normpath(os.path.join(self.FILE_DIRECTORY, f'./__results_files/resultFile_{resultID}.json'))
 
     def CheckSolution(self, values: list):
         """When sending a solution, check if it has already been sent.
