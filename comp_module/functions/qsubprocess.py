@@ -147,7 +147,10 @@ class QsubProcess:
             with open(get, 'r') as f:
                 tmp = json.loads(f.read())
                 objectives.append(tmp['objective'])
-                info.append(tmp['info'])
+                if 'info' in tmp:
+                    info.append(tmp['info'])
+                else:
+                    tmp['info'] = None
                 res_values.append(tmp)
 
         # Delete all generated files
